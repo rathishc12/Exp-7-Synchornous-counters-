@@ -61,8 +61,8 @@ STEP 5 After that run the program and give the clock pulse value as 50 in timing
 ### PROGRAM 
 ```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: S.PRADEEP
-RegisterNumber: 212222100034
+Developed by: RATHISH KUMAR C
+RegisterNumber: 212222100043
 ```
 ##### UPCOUNTER
 ```
