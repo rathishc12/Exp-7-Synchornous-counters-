@@ -66,29 +66,30 @@ RegisterNumber: 212222100043
 ```
 ##### UPCOUNTER
 ```
-module upc(clk,A);
+module uc(clk,A);
 input clk;
-output reg[0:3]A;
+output reg [3:0]A;
 always@(posedge clk)
 begin
-		A[0]=((((A[1])&(A[2]))&A[3])^A[0]);
-		A[1]=(((A[2])&(A[3]))^A[1]);
-		A[2]=((A[3])^A[2]);
-		A[3]=1^A[3];
+A[3]=((A[2]&A[1])&A[0])^A[3];
+A[2]=(A[1]&A[0])^A[2];
+A[1]=(A[0]^A[1]);
+A[0]=1^A[0];
 end
 endmodule
 ```
+
 ##### DOWNCOUNTER
 ```
-module downc(clk,A);
+module dc(clk,A);
 input clk;
-output reg[0:3]A;
-always@(posedge clk)
+output reg [3:0]A;
+always @(posedge clk)
 begin
-	A[0]=((((~A[1])&(~A[2]))&A[3])^A[0]);
-	A[1]=(((A[2])&(A[3]))^A[1]);
-	A[2]=((A[3])^A[2]);
-	A[3]=1^A[3];
+A[3]=((~A[2])&(~A[1])&(~A[0]))^A[3];
+A[2]=((~A[1])&(~A[0]))^A[2];
+A[1]=(~A[0])^A[1];
+A[0]=1^A[0];
 end
 endmodule
 ```
@@ -96,7 +97,8 @@ endmodule
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 ##### UPCOUNTER
-![image](https://github.com/AmruthaRajsheker/Exp-7-Synchornous-counters-/assets/119475943/489bacb3-e72c-4666-bec7-4b04f6aff49d)
+
+![upcounter](https://github.com/pradeepsiva20/Exp-7-Synchornous-counters-/assets/120539823/ecb47940-bc4b-440c-9fac-fe21fb19b364)
 
 
 
@@ -105,22 +107,30 @@ endmodule
 
 
 ##### DOWNCOUNTER
-![image](https://github.com/AmruthaRajsheker/Exp-7-Synchornous-counters-/assets/119475943/8961a141-aafb-4dd0-b0d6-afa4d52a014a)
+
+![downcounter rtl](https://github.com/pradeepsiva20/Exp-7-Synchornous-counters-/assets/120539823/155d7592-57fe-4ee3-9612-64478b1a5c92)
 
 
 ### TIMING DIGRAMS FOR COUNTER  
+
 ##### UPCOUNTER
-![image](https://github.com/AmruthaRajsheker/Exp-7-Synchornous-counters-/assets/119475943/e11216c5-8b8f-4223-8d42-8c108b7658f4)
+
+![timin g diagram upcounter](https://github.com/pradeepsiva20/Exp-7-Synchornous-counters-/assets/120539823/c9d03a4d-5589-473d-a7b7-f351ab39f951)
+
+
 
 ##### DOWNCOUNTER
-![image](https://github.com/AmruthaRajsheker/Exp-7-Synchornous-counters-/assets/119475943/6e2b1b43-ef90-4f35-9c1a-9d8b975c443b)
+
+![timing diagram 7](https://github.com/pradeepsiva20/Exp-7-Synchornous-counters-/assets/120539823/ef673633-0c87-4d1a-a306-8321c1f019b6)
 
 
 
 
 ### TRUTH TABLE 
 ##### UPCOUNTER
-![image](https://github.com/AmruthaRajsheker/Exp-7-Synchornous-counters-/assets/119475943/009031ce-1ca7-4c77-b20c-fafb3b0f3ad9)
+
+
+![truth table upcounter](https://github.com/pradeepsiva20/Exp-7-Synchornous-counters-/assets/120539823/b8c24acd-f944-4114-95ef-23122eca78a1)
 
 
 
@@ -128,6 +138,9 @@ endmodule
 
 
 ##### DOWNCOUNTER
-![Screenshot 2023-06-04 193155](https://github.com/AmruthaRajsheker/Exp-7-Synchornous-counters-/assets/119475943/da7616df-fb5f-4ef6-833f-68141f7d5de2)
+
+![truth table down](https://github.com/pradeepsiva20/Exp-7-Synchornous-counters-/assets/120539823/243ca52b-eed9-4385-b0bf-e9b3955df2db)
+
+
 ### RESULTS 
 Thus Synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are verified.
